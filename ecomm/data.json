@@ -1,0 +1,18 @@
+{
+  "data":{
+    "1":{
+      "name" : "hp 14",
+      "image" : "https://m.media-amazon.com/images/I/81yJqJSeK4L._AC_AA180_.jpg",
+      "price" : "844$",
+      "category" : "laptop",
+      "brand" : "hp"
+    },
+    "2":{
+      "name" : "galaxy m33",
+      "image" : "https://m.media-amazon.com/images/I/81xvGbBFNhL._AC_AA180_.jpg",
+      "price" : "253$",
+      "category" : "mobile",
+      "brand" : "samsung"
+    }
+  }
+}

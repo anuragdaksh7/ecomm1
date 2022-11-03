@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ECOMM</title>
+    <style media="screen">
+      body {
+        background-color: #333333;
+      }
+
+
+      #main-content {
+        width: 100%;
+      }
+
+      #container {
+        width: 80vw;
+        display: flex;
+
+      }
+
+      #cart-btn {
+        background-color: #ed6402;
+        margin-left: 5vw;
+        width: 15vw;
+        border: none;
+        color: white;
+        border-radius: 15px;
+      }
+
+      #cart-btn:hover {
+        transition: 200ms;
+        background-color: #ad4800;
+      }
+
+      #headd {
+        background-color: rgba(255,255,255,1);
+        box-shadow: 0px 0px 30px 1px rgb(255 255 255 /40%);
+        backdrop-filter: blur(10px);
+        display: flex;
+        font-size: 30px;
+        font-weight: bold;
+        width: 100%;
+        justify-content: center;
+        height: fit-content;
+        border: none;
+        border-radius: 15px;
+
+      }
+
+      .innerhtmls {
+        background-color: #4a4a4a;
+        background-color: rgba(74,74,74,0.90);
+        box-shadow: 0px 0px 30px 1px rgb(74 74 74 /30%);
+        backdrop-filter: blur(10px);
+        width: 100%;
+        border-radius: 15px;
+        padding-left: 30px;
+        color: #adadad;
+        margin-left: 5px;
+
+      }
+
+
+      .item {
+        display: flex;
+        background-color: rgba(255,255,255,1);
+        width: 80vw;
+        border: none;
+        box-shadow: 0px 0px 30px 1px rgb(255 255 255 /30%);
+        backdrop-filter: blur(10px);
+        height: fit-content;
+        padding: 20px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-left: 10px;
+        border-radius: 15px;
+        padding-inline-start: 14px;
+
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id = "container">
+      <div id="headd">
+        <p>XYZ ECOMM </p>
+
+      </div>
+      <button type="button" id= "cart-btn" name="button">cart</button>
+    </div>
+    <div id = "mainnn">
+    <div id="main-content">
+
+    </div>
+    </div>
+    <script type="text/javascript" defer>
+      data = `
+      {
+        "data":{
+          "1":{
+            "name" : "HP 14",
+            "image" : "https://m.media-amazon.com/images/I/81yJqJSeK4L._AC_AA180_.jpg",
+            "price" : "844$",
+            "category" : "laptop",
+            "brand" : "hp"
+          },
+          "2":{
+            "name" : "GALAXY M33",
+            "image" : "https://m.media-amazon.com/images/I/81xvGbBFNhL._AC_AA180_.jpg",
+            "price" : "253$",
+            "category" : "mobile",
+            "brand" : "samsung"
+          },
+          "3":{
+            "name" : "GAMING MOUSE",
+            "image" : "https://m.media-amazon.com/images/I/61lF-CvIfDL._AC_UY218_.jpg",
+            "price" : "16$",
+            "category" : "mouse",
+            "brand" : "T-DAGGER"
+          },
+          "4" : {
+            "name" : "GAMING MOUSE",
+            "image" : "https://m.media-amazon.com/images/I/61n0IHTywTL._AC_UL320_.jpg",
+            "price" : "39$",
+            "category" : "mouse",
+            "brand" : "logitech"
+          },
+          "5" : {
+            "name" : "twilight language",
+            "image" : "https://m.media-amazon.com/images/I/61IcQYuujuL._AC_SY200_.jpg",
+            "price" : "22$",
+            "category" : "book",
+            "brand" : "Vinita agarwal (author)"
+          }
+        }
+      }
+      `;
+      data = JSON.parse(data);
+      length = Object.keys(data["data"]).length;
+
+      main = document.getElementById("main-content");
+
+      for (i = 0; i < length; i++) {
+        node = document.createElement("div");
+        zz = i+1;
+        node.id = String(zz);
+        node.className = "item";
+
+        hm = document.createElement("img");
+        hm.src = data["data"][String(zz)]["image"];
+        hm.style.width = "300px";
+        hm.style.height = "auto";
+        node.appendChild(hm)
+        //hm.innerHTML = "hii";
+        inne = document.createElement("div");
+        inne.className = "innerhtmls";
+        hm = document.createElement("h3");
+        hm.innerHTML = data["data"][String(zz)]["name"];
+        inne.appendChild(hm);
+
+        hm = document.createElement("h3");
+        hm.innerHTML = "brand " + data["data"][String(zz)]["brand"];
+        inne.appendChild(hm);
+
+        hm = document.createElement("h3");
+        hm.innerHTML = data["data"][String(zz)]["category"];
+        inne.appendChild(hm);
+
+        hm = document.createElement("h3");
+        hm.innerHTML =  data["data"][String(zz)]["price"];
+        inne.appendChild(hm);
+
+        node.appendChild(inne);
+        //main.appendChild(hm);
+        main.appendChild(node);
+      }
+
+    </script>
+  </body>
+</html>
